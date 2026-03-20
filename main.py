@@ -29,7 +29,7 @@ def is_blackout(image_bytes):
 def extract_data(image_bytes):
     base64_img = base64.b64encode(image_bytes).decode('utf-8')
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": [
             {"type": "text", "text": "나이키 신발 정보(sku, price, discount, final_price)를 JSON으로 추출해줘. sku에 I와 1을 정확히 구분해."},
             {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{base64_img}"}}
