@@ -39,7 +39,7 @@ def extract_data(image_bytes):
     return json.loads(response.choices[0].message.content)
 
 # 4. 실행 화면
-uploaded_files = st.file_uploader("사진들을 순서대로 선택하세요", accept_multiple_files=True)
+uploaded_files = st.file_uploader("사진들을 순서대로 선택하세요", type=["jpg", "png", "jpeg"], accept_multiple_files=True)
 
 if st.button("🚀 분석 시작"):
     if uploaded_files:
